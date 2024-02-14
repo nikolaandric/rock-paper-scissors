@@ -91,73 +91,79 @@
 </script>
 
 <template>
-  <div class="flex min-h-screen flex-col bg-cyan-700 text-center text-white">
-    <header class="container mx-auto mt-20 p-3 sm:p-6">
-      <h1 class="text-4xl font-bold">Rock, Paper, Scissors</h1>
-    </header>
+  <div class="min-h-screen bg-cyan-700">
+    <div class="mx-auto flex max-w-3xl flex-col text-center text-white">
+      <header class="container mx-auto mt-20 p-3 sm:p-6">
+        <h1 class="text-4xl font-bold">Rock, Paper, Scissors</h1>
+      </header>
 
-    <main class="container mx-auto flex-1 p-6">
-      <div
-        v-if="choice === null"
-        class="mx-6 flex items-center justify-center"
-      >
-        <button
-          @click="Play('rock')"
-          class="mx-6 w-64 rounded-full bg-white p-6 shadow-lg transition-transform duration-300 hover:scale-110 sm:p-12"
-        >
-          <img
-            src="./assets/RockIcon.svg"
-            alt="Rock"
-            class="h-10 w-10 max-w-10 sm:h-auto sm:w-full sm:max-w-full"
-          />
-        </button>
-        <button
-          @click="Play('paper')"
-          class="mx-6 w-64 rounded-full bg-white p-6 shadow-lg transition-transform duration-300 hover:scale-110 sm:p-12"
-        >
-          <img
-            src="./assets/PaperIcon.svg"
-            alt="Rock"
-            class="h-10 w-10 max-w-10 sm:h-auto sm:w-full sm:max-w-full"
-          />
-        </button>
-        <button
-          @click="Play('scissors')"
-          class="mx-6 w-64 rounded-full bg-white p-6 shadow-lg transition-transform duration-300 hover:scale-110 sm:p-12"
-        >
-          <img
-            src="./assets/ScissorsIcon.svg"
-            alt="Rock"
-            class="h-10 w-10 max-w-10 sm:h-auto sm:w-full sm:max-w-full"
-          />
-        </button>
-      </div>
-
-      <div v-else>
-        <div class="mb-4 text-3xl">
-          You picked <span class="text-purple-500">{{ choice }}</span>
-        </div>
-        <div class="mb-4 text-3xl">
-          Computed picked <span class="text-orange-500">{{ computerChoice }}</span>
-        </div>
+      <main class="container mx-auto flex-1 p-6">
         <div
-          class="mb-12 text-6xl"
-          :class="verdictClass"
+          v-if="choice === null"
+          class="mx-6 flex items-center justify-center"
         >
-          {{ verdict }}
+          <button
+            @click="Play('rock')"
+            class="mx-6 w-64 rounded-full bg-white p-6 shadow-lg transition-transform duration-300 hover:scale-110 sm:p-12"
+          >
+            <img
+              src="./assets/RockIcon.svg"
+              alt="Rock"
+              class="h-10 w-10 max-w-10 sm:h-auto sm:w-full sm:max-w-full"
+            />
+          </button>
+          <button
+            @click="Play('paper')"
+            class="mx-6 w-64 rounded-full bg-white p-6 shadow-lg transition-transform duration-300 hover:scale-110 sm:p-12"
+          >
+            <img
+              src="./assets/PaperIcon.svg"
+              alt="Rock"
+              class="h-10 w-10 max-w-10 sm:h-auto sm:w-full sm:max-w-full"
+            />
+          </button>
+          <button
+            @click="Play('scissors')"
+            class="mx-6 w-64 rounded-full bg-white p-6 shadow-lg transition-transform duration-300 hover:scale-110 sm:p-12"
+          >
+            <img
+              src="./assets/ScissorsIcon.svg"
+              alt="Rock"
+              class="h-10 w-10 max-w-10 sm:h-auto sm:w-full sm:max-w-full"
+            />
+          </button>
         </div>
-        <button
-          @click="ResetRound"
-          class="rounded-lg bg-white px-4 py-2 text-lg uppercase text-cyan-700"
-        >
-          Reset
-        </button>
-      </div>
 
-      <div class="mb-4 mt-12 text-3xl">{{ wins }} | {{ draws }} | {{ losses }}</div>
+        <div v-else>
+          <div class="mb-6 flex justify-evenly">
+            <div class="text-3xl">
+              You <br />
+              <span class="font-bold uppercase">{{ choice }}</span>
+            </div>
+            <div class="text-3xl">
+              Computer <br />
+              <span class="font-bold uppercase">{{ computerChoice }}</span>
+            </div>
+          </div>
+          <div
+            class="mb-6 text-6xl"
+            :class="verdictClass"
+          >
+            {{ verdict }}
+          </div>
+          <button
+            @click="ResetRound"
+            class="rounded-lg bg-white px-4 py-2 text-lg uppercase text-cyan-700"
+          >
+            Reset
+          </button>
+        </div>
 
-      <div class="text-lg">Win rate: {{ Math.round(winPercentage) }}%</div>
-    </main>
+        <div class="mb-4 mt-12 text-3xl">{{ wins }} | {{ draws }} | {{ losses }}</div>
+
+        <div class="text-lg">Win rate: {{ Math.round(winPercentage) }}%</div>
+      </main>
+    </div>
   </div>
 </template>
 
