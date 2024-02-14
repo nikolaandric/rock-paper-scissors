@@ -92,7 +92,7 @@
 
 <template>
   <div class="flex min-h-screen flex-col bg-cyan-700 text-center text-white">
-    <header class="container mx-auto mt-20 p-6">
+    <header class="container mx-auto mt-20 p-3 sm:p-6">
       <h1 class="text-4xl font-bold">Rock, Paper, Scissors</h1>
     </header>
 
@@ -103,32 +103,32 @@
       >
         <button
           @click="Play('rock')"
-          class="mx-6 w-64 rounded-full bg-white p-12 shadow-lg transition-transform duration-300 hover:scale-110"
+          class="mx-6 w-64 rounded-full bg-white p-6 shadow-lg transition-transform duration-300 hover:scale-110 sm:p-12"
         >
           <img
             src="./assets/RockIcon.svg"
             alt="Rock"
-            class="w-full"
+            class="h-10 w-10 max-w-10 sm:h-auto sm:w-full sm:max-w-full"
           />
         </button>
         <button
           @click="Play('paper')"
-          class="mx-6 w-64 rounded-full bg-white p-12 shadow-lg transition-transform duration-300 hover:scale-110"
+          class="mx-6 w-64 rounded-full bg-white p-6 shadow-lg transition-transform duration-300 hover:scale-110 sm:p-12"
         >
           <img
             src="./assets/PaperIcon.svg"
             alt="Rock"
-            class="w-full"
+            class="h-10 w-10 max-w-10 sm:h-auto sm:w-full sm:max-w-full"
           />
         </button>
         <button
           @click="Play('scissors')"
-          class="mx-6 w-64 rounded-full bg-white p-12 shadow-lg transition-transform duration-300 hover:scale-110"
+          class="mx-6 w-64 rounded-full bg-white p-6 shadow-lg transition-transform duration-300 hover:scale-110 sm:p-12"
         >
           <img
             src="./assets/ScissorsIcon.svg"
             alt="Rock"
-            class="w-full"
+            class="h-10 w-10 max-w-10 sm:h-auto sm:w-full sm:max-w-full"
           />
         </button>
       </div>
