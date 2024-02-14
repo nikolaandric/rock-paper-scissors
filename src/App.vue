@@ -92,7 +92,7 @@
 
 <template>
   <div class="flex min-h-screen flex-col bg-cyan-700 text-center text-white">
-    <header class="container mx-auto p-6">
+    <header class="container mx-auto mt-20 p-6">
       <h1 class="text-4xl font-bold">Rock, Paper, Scissors</h1>
     </header>
 
